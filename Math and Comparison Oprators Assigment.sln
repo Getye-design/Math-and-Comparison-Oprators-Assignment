@@ -1,22 +1,47 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math and Comparison Oprators Assigment", "Math and Comparison Oprators Assigment.csproj", "{ED738BFD-3DE3-4CBA-BBDF-F66362D89991}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ED738BFD-3DE3-4CBA-BBDF-F66362D89991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED738BFD-3DE3-4CBA-BBDF-F66362D89991}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED738BFD-3DE3-4CBA-BBDF-F66362D89991}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED738BFD-3DE3-4CBA-BBDF-F66362D89991}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Print program title
+        Console.WriteLine("Anonymous Income Comparison Program\n");
+        
+        // Get input for Person 1
+        Console.WriteLine("Person 1");
+        Console.Write("Hourly Rate? ");
+        double hourlyRate1 = Convert.ToDouble(Console.ReadLine());
+        
+        Console.Write("Hours worked per week? ");
+        double hoursWorked1 = Convert.ToDouble(Console.ReadLine());
+        
+        // Get input for Person 2
+        Console.WriteLine("\nPerson 2");
+        Console.Write("Hourly Rate? ");
+        double hourlyRate2 = Convert.ToDouble(Console.ReadLine());
+        
+        Console.Write("Hours worked per week? ");
+        double hoursWorked2 = Convert.ToDouble(Console.ReadLine());
+        
+        // Calculate annual salaries (assuming 52 weeks in a year)
+        double annualSalary1 = hourlyRate1 * hoursWorked1 * 52;
+        double annualSalary2 = hourlyRate2 * hoursWorked2 * 52;
+        
+        // Print annual salaries
+        Console.WriteLine("\nAnnual salary of Person 1:");
+        Console.WriteLine(annualSalary1);
+        
+        Console.WriteLine("\nAnnual salary of Person 2:");
+        Console.WriteLine(annualSalary2);
+        
+        // Compare salaries and print result
+        bool person1MakesMore = annualSalary1 > annualSalary2;
+        Console.WriteLine("\nPerson 1 makes more money than Person 2");
+        Console.WriteLine(person1MakesMore);
+        
+        // Keep console open until user presses a key
+        Console.WriteLine("\nPress any key to exit...");
+        Console.ReadKey();
+    }
+}
